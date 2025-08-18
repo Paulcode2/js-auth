@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class='login'>
+        <div class="circle">
+        <span>
+        <img src="assets/Back.png" alt="" />
+        </span>
+          <small>Login Now</small>
+        </div>
+        <div class="content">
+          <span>Please login to continue using our app.</span>
+          <div class="socials">
+          
+            <span>Enter Via Social Networks</span>
+          <div class="s-links">
+            <img src="assets/🦆 icon _rounded facebook_.png" alt="" />
+            <img src="assets/🦆 icon _rounded instagram_.png" alt="" />
+          </div>
+          </div>
+          <div class="login">
+            <div class="text">
+            <span>OR</span>
+            <small> login with email</small>
+            <form>
+                <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+              <input id="email" type="email" 
+               required                                                                                
+              />
+              <div class="password">
+              <input 
+              id="password"
+              type="password"
+              name='password'
+              required                                                                                
+   
+              placeholder='........'/>
+              <span class='img'>
+                <img src="assets/image 1.png" alt="">
+              </span>
+              </div>
+              <div class="check">
+              <a href="#">
+              <Link to='/reset'>
+              <span>Forget Password?</span>
+              </Link>
+              </a>
+              </div>
+              <div class="btn">
+              <button id="btnIn">Login</button>
+              </div>
+              <div class="error">
+                <span id="error"></span>
+              </div>
+            </form>
+            </div>
+          </div>
+          <footer>
+          <p>You already have an account? <a href='/signUp.html'>Sign up</a></p>
+          </footer>
+        </div>
+      </div>
+      <!-- <script type="module" src="auth.js"></script> -->
+</body>
+</html>

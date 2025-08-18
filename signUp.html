@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styl.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="register">
+      <div class="circle">
+        <span class="back">
+          <img src="assets/Back.png" alt="" />
+        </span>
+        <small>Sign Up</small>
+      </div>
+      <div class="content">
+        <span
+          >Please Registration with email and <br />sign up to continue using
+          our app.</span
+        >
+        <div class="socials">
+          <span>Enter Via Social Networks</span>
+          <div class="s-links">
+            <img src="assets/🦆 icon _rounded facebook_.png" alt="" />
+            <img src="assets/🦆 icon _rounded instagram_.png" alt="" />
+          </div>
+        </div>
+        <div class="login">
+          <div class="text">
+            <span>OR</span>
+            <small> login with email</small>
+            <form>
+              <div
+                id="signUpMessage"
+                class="messageDiv"
+                style="display: none"
+              ></div>
+              <input id="email" class="email" type="email" required />
+              <div class="password">
+                <input
+                  class="password"
+                  type="password"
+                  name="password"
+                  id="password"
+                  required
+                  placeholder="........"
+                />
+                <!-- onclick="togglePassword()" -->
+
+                <button type="button" id="hide" class="hide">
+                  <img id="eyeOn" src="assets/image 1.png" alt="" />
+                  <img
+                    id="eyeOff"
+                    style="display: none"
+                    src="assets/Eye off.png"
+                    alt=""
+                  />
+                </button>
+              </div>
+
+              <div class="check">
+                <input type="checkbox" />
+                <span>I agree with privacy policy</span>
+              </div>
+
+              <div class="btn">
+                <button id="btn">Sign up</button>
+              </div>
+              <div class="error">
+                <span id="error"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="footer">
+          <p>You already have an account? <a href="/login">Login</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- <script type="module" src="auth.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

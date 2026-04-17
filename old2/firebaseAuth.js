@@ -1,41 +1,38 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/12.12.0/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 import {
   getFirestore,
   doc,
   setDoc,
   getDoc,
-} from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
-
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 const firebaseConfig = {
-  apiKey: "AIzaSyCkj3K_cGbrADmE55dqtjVWqYw6yD_KUEk",
-  authDomain: "batch-a-auth.firebaseapp.com",
-  projectId: "batch-a-auth",
-  storageBucket: "batch-a-auth.firebasestorage.app",
-  messagingSenderId: "573415298853",
-  appId: "1:573415298853:web:b653efe9fd3d2f1cd7eccc",
-  measurementId: "G-7K1EHQ1XPM",
+  apiKey: "AIzaSyCV0kyT5rua95IeCvRBtLG6kO4gz9Z_mRY",
+  authDomain: "authentication-project-4aa02.firebaseapp.com",
+  projectId: "authentication-project-4aa02",
+  storageBucket: "authentication-project-4aa02.firebasestorage.app",
+  messagingSenderId: "501151188405",
+  appId: "1:501151188405:web:e77191c4eb441e45ffc5fc",
+  measurementId: "G-672YS4X5Q4",
 };
-
-// Npm (Node package modules) and script tag
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
-// Import signup elements from HTML
-
 const signUpBtn = document.querySelector("#btn");
+const errorMsg = document.querySelector("#error");
 
+// register
 if (signUpBtn) {
   signUpBtn.addEventListener("click", (e) => {
-    e.preventDefault();
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
+    e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
         // Signed up
@@ -46,37 +43,34 @@ if (signUpBtn) {
         };
         await setDoc(doc(db, "users", user.uid), userData);
         window.location.href = "login.html";
-        // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ...
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // errorMsg.innerHTML = error.message;
+        alert(error.message);
+        // ..
       });
   });
 }
 
-//
-// Login feature
 const loginBtn = document.querySelector("#btnIn");
 if (loginBtn) {
   loginBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
+
     signInWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
         // Signed in
         const user = userCredential.user;
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
-        // ...
+
         if (docSnap.exists()) {
           console.log("Document data:", docSnap.data());
-          alert("Login successful");
-          setTimeout(() => {
-            window.location.href = "welcome.html";
-          }, 2000);
+          window.location.href = "welcome.html";
         } else {
           // docSnap.data() will be undefined in this case
           console.log("No such document!");
@@ -88,7 +82,10 @@ if (loginBtn) {
       });
   });
 }
+// login
+// const auth = getAuth();
 
-// Create show and hide passowrd for login
-// Add forgot password feature
+// db
 
+// Register (Auth, and database for users)
+// Login (Auth, and database for users)

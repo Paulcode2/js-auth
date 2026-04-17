@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,11 +47,10 @@
                   placeholder="........"
                 />
                 <!-- onclick="togglePassword()" -->
-
                 <button type="button" id="hide" class="hide">
-                  <img id="eyeOn" src="assets/image 1.png" alt="" />
+                  <img id="show" src="assets/image 1.png" alt="" />
                   <img
-                    id="eyeOff"
+                    id="off"
                     style="display: none"
                     src="assets/Eye off.png"
                     alt=""
@@ -74,12 +73,13 @@
           </div>
         </div>
         <div class="footer">
-          <p>You already have an account? <a href="/login">Login</a></p>
+          <p>You already have an account? <a href="login.html">Login</a></p>
         </div>
       </div>
     </div>
     <script type="module" src="firebaseAuth.js"></script>
+    <script src="new.js"></script>
     <!-- <script type="module" src="auth.js"></script> -->
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
